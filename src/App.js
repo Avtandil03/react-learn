@@ -14,16 +14,33 @@ function App() {
     {id: 2, title: "JavaScript2", body: "Description"},
     {id: 3, title: "JavaScript3", body: "Description"},
   ])
+
+  const [post, setPost] = useState({title: '', body: ''});
   
+  function addNewPost(e) {
+    e.preventDefault();
+    setPosts([...posts, {...post, id: posts[posts.length-1].id + 1}])
+    setPost({title: '', body: ''})
+  }
   
   return (
     <div className="App">
-    <form>
-      <MyInput type="text" placeholder="Post name"/>
-      <MyInput type="text" placeholder="Post description"/>
-      <MyButton disabled >Create Post</MyButton>
-    </form>
-      <PostList posts={posts} title = "Список постов" /> 
+      <form>
+        <MyInput 
+          value={post.title}
+          onChange={e => {setPost({...post, title: e.target.value})}}
+          type="text" 
+          placeholder="Post name" />
+        <MyInput 
+          value={post.body}
+          onChange={e => {setPost({...post, body: e.target.value})}}
+          type="text" 
+          placeholder="Post description" />
+        <MyButton onClick={addNewPost}>
+          Create Post
+        </MyButton>
+      </form>
+      <PostList posts={posts} title="Список постов" />
     </div>
   );
 }

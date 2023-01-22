@@ -8,8 +8,9 @@ const PostForm = ({create, posts}) => {
     
   function addNewPost(e) {
     e.preventDefault();
+    const lastId = (posts.length) ? posts[posts.length - 1].id + 1 : 1;
     const newPost = {
-      ...post, id: posts[posts.length - 1].id + 1
+      ...post, id: lastId 
     }
     create(newPost)
     setPost({title: '', body: ''})

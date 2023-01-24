@@ -48,3 +48,23 @@ img{vertical-align: top;}
   justify-content: space-between;
   align-items: center;
 }
+
+.post-enter {
+  opacity: 0;
+  transition: all 200ms ease-in;
+  transform: translateX(-350px);
+}
+.post-enter-active {
+  opacity: 1;
+  transition: all 200ms ease-in;
+  transform: translateX(0px);
+}
+.post-exit {
+  opacity: 1;
+  transition: all 200ms ease-in;
+}
+.post-exit-active {
+  opacity: 0;
+  transition: all 200ms ease-in;
+  transform: translateX(-350px);
+}

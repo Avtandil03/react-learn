@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import PostList from "./components/PostList";
 import "./styles/App.css"
 import PostForm from "./components/PostForm";
@@ -6,6 +6,7 @@ import PostFilter from "./components/PostFilter";
 import MyModal from "./UI/modal/MyModal";
 import MyButton from "./UI/button/MyButton";
 import { usePosts } from "./hooks/usePosts";
+import PostService from "./API/PostService";
 
 function App() {  
   
@@ -19,10 +20,18 @@ function App() {
   const [modal, setModal] = useState(false)
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
 
+  useEffect(() => {
+    fetchPosts();
+  }, [])
 
   function createPost(newPost){
     setPosts([...posts, newPost]);
     setModal(false)
+  }
+
+  async function fetchPosts(){
+    const posts = await PostService.getAll();
+    setPosts(posts)
   }
 
   function removePost(post){
@@ -31,6 +40,7 @@ function App() {
 
   return (
     <div className="App">
+      <MyButton onClick={fetchPosts}>getPosts</MyButton>
       <MyButton style={{marginTop: '30px'}} onClick={() => setModal(true)}>
         Create user
       </MyButton>

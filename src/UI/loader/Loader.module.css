@@ -1,0 +1,18 @@
+.myLoader{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px dashed teal;
+  background-image: url('https://yt3.ggpht.com/ytc/AKedOLQVRFavAYtH9tMTMESRnEUqysAYZBwd-zcrLx5CHw=s900-c-k-c0x00ffffff-no-rj');
+  background-size: cover;
+  animation: rotate 500ms linear 0s infinite alternate;
+}
+
+@keyframes rotate {
+  from{
+    transform: rotate(0deg) scale(1); 
+  }
+  to{
+    transform: rotate(360deg)scale(1.5);
+  }
+}

@@ -1,0 +1,14 @@
+.myPage__wrapper{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.myPage{
+  padding: 10px;
+  cursor: pointer;
+  border: solid 1px teal;
+}
+.myPage__current{
+  border: 2px orange solid;
+  font-weight: bold;
+}

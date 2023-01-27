@@ -10,6 +10,5 @@ export function usePagination( totalPages){
     return arr
   }, [totalPages])
 
-  console.log(pagesArray)
   return pagesArray
 }

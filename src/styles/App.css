@@ -69,6 +69,9 @@ img{vertical-align: top;}
   transition: all 200ms ease-in;
   transform: translateX(-350px);
 }
+.post__btns{
+  display: flex;
+}
 .navBar{
   height: 50px;
   width: 100vw;

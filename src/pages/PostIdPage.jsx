@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFetcher, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import PostService from '../API/PostService';
 import Loader from '../UI/loader/Loader';

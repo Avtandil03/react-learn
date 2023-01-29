@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import ErrorPages from '../pages/ErrorPages'
 import { privateRoutes, publicRoutes } from '../router/index'
+import {AuthContext} from '../context/index'
+import Loader from '../UI/loader/Loader';
 
 const AppRouter = () => {
-  let isAuth = false
+  const {isAuth, isLoading} = useContext(AuthContext)
+  if(isLoading){
+    return <Loader/>
+  }
   return (
     <Routes>
-      {(isAuth) 
-        ? 
+      {(isAuth)
+        ?
         privateRoutes.map(route =>
-          <Route 
+          <Route
             element={route.element}
             path={route.path}
             exact={route.exact}

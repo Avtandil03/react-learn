@@ -7,7 +7,6 @@ const PostItem = ({post, remove}) => {
   const history = useNavigate();
   function handleSubmit(e) {
     e.preventDefault();
-  
     history(`/posts/${post.id}`);
   }
   return (

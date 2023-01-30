@@ -23,7 +23,7 @@ const PostIdPage = () => {
   },[])
 
   return (
-    <div>
+    <>
       {isLoading
         ? <Loader/>
         : <h1>{post.id}. {post.title}.</h1>
@@ -42,7 +42,7 @@ const PostIdPage = () => {
           </div>
 
       }
-    </div>
+    </>
   );
 };
 

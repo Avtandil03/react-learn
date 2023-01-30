@@ -5,14 +5,16 @@ import { AuthContext } from '../context';
 const Home = () => {
   const {isAuth} = useContext(AuthContext)
   return (
-    <div>
+    <>
+      <h1>This is home page</h1>
+
       {isAuth
-        ? 
-        <h1> You are logged in ...</h1>
+        ?
+        <h3 style={{ color: 'darkgreen' }}> You are logged in ...</h3>
         :
-        <h1> Please log in and you can get posts</h1>
+        <h3 style={{ color: 'darkred' }}> Please log in and you can get posts</h3>
       }
-    </div>
+    </>
 
   );
 };

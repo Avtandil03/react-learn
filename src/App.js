@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { HashRouter, useNavigate } from "react-router-dom";
+import { BrowserRouter, useNavigate } from "react-router-dom";
 import AppRouter from "./components/AppRouter";
 import "./styles/App.css"   
 import NavBar from "./UI/navbar/NavBar";
@@ -25,10 +25,10 @@ function App() {
         isLoading
       }}
     >
-      <HashRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <NavBar />
         <AppRouter />
-      </HashRouter>
+      </BrowserRouter>
     </AuthContext.Provider>
   );
 }

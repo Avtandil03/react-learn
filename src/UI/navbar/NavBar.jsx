@@ -17,7 +17,7 @@ const NavBar = () => {
   return (
     <div className="navBar">
       <MyButton onClick={logOut} >Sign out</MyButton>
-      <div className="navBar__links">
+      <div className="navBar__links" basename={process.env.PUBLIC_URL}>
         <Link to='/'>Home</Link>
         <Link to="/posts">Posts</Link>
         <Link to="/about">About</Link>

@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-learn/static/css/main.6235ca69.css",
-    "main.js": "/react-learn/static/js/main.4a35a554.js",
+    "main.js": "/react-learn/static/js/main.f86aa5d0.js",
     "index.html": "/react-learn/index.html",
     "main.6235ca69.css.map": "/react-learn/static/css/main.6235ca69.css.map",
-    "main.4a35a554.js.map": "/react-learn/static/js/main.4a35a554.js.map"
+    "main.f86aa5d0.js.map": "/react-learn/static/js/main.f86aa5d0.js.map"
   },
   "entrypoints": [
     "static/css/main.6235ca69.css",
-    "static/js/main.4a35a554.js"
+    "static/js/main.f86aa5d0.js"
   ]
 }

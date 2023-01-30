@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { BrowserRouter, useNavigate } from "react-router-dom";
+import { BrowserRoute } from "react-router-dom";
 import AppRouter from "./components/AppRouter";
 import "./styles/App.css"   
 import NavBar from "./UI/navbar/NavBar";
@@ -25,7 +25,7 @@ function App() {
         isLoading
       }}
     >
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={'/react-learn'}>
         <NavBar />
         <AppRouter />
       </BrowserRouter>

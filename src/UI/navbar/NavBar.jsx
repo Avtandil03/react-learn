@@ -17,8 +17,9 @@ const NavBar = () => {
   return (
     <div className="navBar">
       <MyButton onClick={logOut} >Sign out</MyButton>
-      <div className="navBar__links" basename={'/react-learn'}>
-        <Link to='/'>Home</Link>
+      <div className="navBar__links">
+        <Link to="/" >Home</Link>
+        <Link to="/about">About</Link>
         <Link to="/posts">Posts</Link>
         <Link to="/about">About</Link>
         <Link to="/login">Login</Link>

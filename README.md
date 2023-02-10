@@ -1,8 +1,8 @@
 # react-learn
 
-This my first react app inspired by [youtube course](https://youtu.be/GNrdg3PzpJQ).
+This my first react app inspired by <a href='https://youtu.be/GNrdg3PzpJQ' target='_blank'>youtube course<a/>.
 
-[LiveDemo](https://avtandil03.github.io/react-learn/)
+<a href='https://avtandil03.github.io/react-learn/' target='_blank'>LiveDemo<a/>
 
 ![alt](/src/assets/react-learn-Demo-_online-video-cutter.com_-_1__1.gif)
 

@@ -22,6 +22,7 @@ function Posts() {
   const [totalPages, setTotalPages] = useState(0)
   const [limit, setLimit] = useState(10)
   const [page, setPage] = useState(1)
+  const [infScroll, setInfScroll] = useState(false)
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
   const lastElement = useRef()
 
@@ -32,13 +33,15 @@ function Posts() {
     setTotalPages(getPagesCount(totalCount, limit))
   },)
 
-  useObserver(lastElement, page < totalPages, isPostsLoading, () =>{
+  useObserver(lastElement, page < totalPages && infScroll, isPostsLoading, () =>{
     setPage(page + 1)
   })
 
+  useEffect(() => {
+    console.log(infScroll)
+  }, [infScroll])
   
   useEffect(() => {
-    console.log(page)
     fetchPosts();
   }, [page, limit])
 
@@ -51,7 +54,15 @@ function Posts() {
     setPosts( posts.filter(p=> p.id !== post.id))
   }
 
-
+  function changeScroll(e){
+    if(infScroll){
+      setInfScroll(false)
+      e.target.style = 'color: teal; border: 1px solid teal'
+    }else{
+      setInfScroll(true)
+      e.target.style = 'color: orange; border: 1px solid orange'
+    }
+  }
 
   return (
     <div className="App">
@@ -59,6 +70,7 @@ function Posts() {
       <MyButton style={{marginTop: '30px'}} onClick={() => setModal(true)}>
         Create post
       </MyButton>
+      <MyButton onClick={changeScroll}>Infinite scrolling</MyButton>
       <MyModal visible={modal} setVisible={setModal} >
         <PostForm create={createPost} posts={posts} />
       </MyModal>
